@@ -10,12 +10,12 @@ const App = () => {
 
   return (
     <div className={appStyles['container']}>
-      {start ? (
-        <Game />
-      ) : (
+      {!start ? (
         <button className={appStyles['start_btn']} onClick={handleStartGame}>
           Start Game
         </button>
+      ) : (
+        <Game setStart={setStart} />
       )}
     </div>
   );
